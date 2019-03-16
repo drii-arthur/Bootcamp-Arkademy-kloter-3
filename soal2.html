@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jawaban Soal No 2 Seleksi Bootcamp arkademy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row mt-5">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h3>validate password</h3>
+            <p id="info"></p>
+            <label for="username">Username :</label>
+            <input type="text" name="name" id="username" class="form-control">
+            <label for="password">Password : <code id="error"></code></label>
+            <input type="password" name="password" id="password" class="form-control">
+            <br>
+            <button type="submit" class="btn btn-primary" onclick="formValidate()">Submit</button>
+        </div>
+    </div>
+    <script>
+        // membuat fungsi untuk memvalidasi password
+        function formValidate() {
+            // membuat variabel untuk mengambil nilai dari password
+            var pw = document.getElementById("password").value;
+
+            // membuat pengkondisian nilai password sudah sesuai yang di minta atau belum
+            // cek apakah panjang karakter dari password minimal 8 atau tidak
+            if (pw.length < 8) {
+                // jika salah maka munculkan pesan kesalahan
+                document.getElementById("error").innerHTML = "password minimal 8 karakter";
+            } else if (pw.match(/[^a-zA-Z]/g)) {
+                document.getElementById("error").innerHTML = "password harus angka huruf besar7kecil dan simbol";
+            } else if (pw.match(/[^0-9]/g)) {
+                document.getElementById("error").innerHTML = "password harus angka huruf besar&kecil dan simbol";
+            } else {
+                document.getElementById("info").innerHTML = "password benar";
+            }
+        }
+
+        //  semoga lolos seleksi,semoga ada kebijakan karna saya baru belajar dan sangat berharap lolos seleksi
+    </script>
+</body>
+
+</html>
